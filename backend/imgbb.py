@@ -5,11 +5,6 @@ import logging
 logger = logging.getLogger(__name__)
 
 IMGBB_API_KEYS = [
-    "cde20f5be684546c0ef750ae9351101b",
-    "b5921dee3c5d581f9fce2ce0875d5acf",
-    "c878497671a3d3dc382acbe26d8aaf9e",
-    "66159fab9667ec731654df893ba471c6",
-    "e6faa583a56a165d801214e61d9e943b"
 ]
 
 def upload_image_to_imgbb(image_bytes: bytes) -> str:
@@ -45,4 +40,5 @@ def upload_image_to_imgbb(image_bytes: bytes) -> str:
         raise Exception("All ImgBB upload attempts failed")
     except Exception as e:
         logger.error(f"General error in upload_image_to_imgbb: {e}")
+
         raise Exception(f"Image upload failed: {str(e)}")
